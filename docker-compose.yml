@@ -1,0 +1,13 @@
+services:
+  newborn-visit:
+    build: .
+    image: community-newborn-visit:latest
+    container_name: community-newborn-visit
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
