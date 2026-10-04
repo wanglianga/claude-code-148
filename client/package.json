@@ -1,0 +1,25 @@
+{
+  "name": "neonatal-visit-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "社区新生儿上门访视与黄疸随访 - 前端",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.0",
+    "zustand": "4.5.7"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.7.3",
+    "vite": "5.4.14"
+  }
+}

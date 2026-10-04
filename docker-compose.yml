@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        # 国内网络可改为 https://registry.npmmirror.com：
+        # NPM_REGISTRY=https://registry.npmmirror.com docker compose up --build
+        NPM_REGISTRY: ${NPM_REGISTRY:-https://registry.npmjs.org}
+    image: neonatal-visit-app
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      # 数据库文件位置（挂卷持久化，删除容器不丢数据）
+      DATA_DIR: /app/data
+    volumes:
+      - nbv-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  nbv-data:
